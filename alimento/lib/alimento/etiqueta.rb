@@ -34,4 +34,6 @@ class Etiqueta
     def getSal
         @sal
     end
+
 end
+

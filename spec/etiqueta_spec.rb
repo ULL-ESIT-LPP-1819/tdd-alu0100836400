@@ -66,4 +66,15 @@ describe Etiqueta do
             expect(@etiqueta.getSal).to eq(6)
         end
     end
+    
+    describe "Existe método para calcular" do
+        it "Valor energético en KJ" do
+            expect(@etiqueta.calcular_valor_energetico_julios).to eq(1498)
+        end
+        
+        it "Valor energético en KCal" do
+            expect(@etiqueta.calcular_valor_energetico_cal).to eq(357)
+        end
+    end
+    
 end
