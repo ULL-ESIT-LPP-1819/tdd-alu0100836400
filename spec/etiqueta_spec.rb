@@ -16,7 +16,7 @@ describe Etiqueta do
             expect(@etiqueta.grasas).to eq(5)
         end
         
-        it "Grasas_saturadas" do
+        it "Grasas saturadas" do
             expect(@etiqueta.grasas_saturadas).to eq(8)
         end
         
