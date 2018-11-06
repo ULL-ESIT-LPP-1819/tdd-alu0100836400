@@ -34,6 +34,14 @@ class Etiqueta
     def getSal
         @sal
     end
-
+    
+    def calcular_valor_energetico_julios()
+        @valor_energeticoJ = 37*(@grasas + @grasas_saturadas) + 17*@hidratos + 17*@azucares + 17*@proteinas + 25*@sal
+    end
+    
+    def calcular_valor_energetico_cal()
+        @valor_energeticoCal = 9*(@grasas + @grasas_saturadas) + 4*@hidratos + 4*@azucares + 4*@proteinas + 6*@sal
+    end
+    
 end
 
