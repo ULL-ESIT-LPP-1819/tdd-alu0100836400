@@ -47,7 +47,7 @@ describe Etiqueta do
         end
         
         it "Grasas saturadas" do
-            expect(@etiqueta.getGrasas_saturadas).to eq(8)
+            expect(@etiqueta.getGrasasSaturadas).to eq(8)
         end
         
         it "Hidratos" do
