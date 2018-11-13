@@ -42,4 +42,26 @@ class Lista
         end
         @cola = @nuevo
     end
+    
+    def extraer_cabeza
+        if @cabeza == nil
+            'Lista vacia'
+        else
+            @aux = @cabeza
+            @cabeza = @aux.anterior
+            @cabeza.siguiente = nil
+            @aux
+        end
+    end
+    
+    def extraer_cola
+        if @cola == nil
+            'Lista vacia'
+        else
+            @aux = @cola
+            @cola = @aux.siguiente
+            @cola.anterior = nil
+            @aux
+        end
+    end
 end
