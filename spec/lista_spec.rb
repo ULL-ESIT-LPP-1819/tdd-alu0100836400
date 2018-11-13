@@ -27,6 +27,10 @@ describe Lista do
                 expect(@nodo.class).to eq(Nodo)
             end
 
-    	end
+    		it "Existe un struct nodo con anterior y siguiente" do
+    		    expect(@nodo).to have_attributes(:valor => 4, :siguiente =>nil, :anterior =>nil)
+    		end
+            
+        end
     end
 end
