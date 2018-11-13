@@ -1,6 +1,4 @@
 require "../spec/spec_helper"
-require 'benchmark'
-require "./lib/alimento/etiqueta.rb"
 
 describe Etiqueta do
     before :each do

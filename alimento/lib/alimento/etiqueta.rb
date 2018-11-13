@@ -1,5 +1,7 @@
 class Etiqueta
     
+    include Comparable
+    
     attr_reader :nombre, :valor_energeticoJ, :valor_energeticoCal, :grasas, :grasas_saturadas, :hidratos, :azucares, :proteinas, :sal
     
     def initialize(nombre, grasas, grasas_saturadas, hidratos, azucares, proteinas, sal)
@@ -41,6 +43,10 @@ class Etiqueta
     
     def calcular_valor_energetico_cal()
         @valor_energeticoCal = 9*(@grasas + @grasas_saturadas) + 4*@hidratos + 4*@azucares + 4*@proteinas + 6*@sal
+    end
+    
+    def <=>(otro)
+        @sal <=> otro.sal
     end
     
 end
