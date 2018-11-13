@@ -31,6 +31,21 @@ describe Lista do
     		    expect(@nodo).to have_attributes(:valor => 4, :siguiente =>nil, :anterior =>nil)
     		end
             
-        end
+            it "Existe un método para insertar por la cabeza" do
+    		    expect(@lista).to respond_to :insertar_cabeza
+    		end
+    		
+		    it "Se puede insertar un elemento en la lista" do
+           	    @lista.insertar_cabeza(@nodo)
+            	expect(@lista.cabeza).to eq(@nodo)
+        	end
+        	
+    		it "Se puede insertar varios nodos en la lista" do
+        		@lista.insertar_cabeza(@nodo2)
+        		@lista.insertar_cabeza(@nodo3)
+        		expect(@lista.cabeza.valor).to eq(@nodo3.valor)
+    		end
+    		
+    		end
     end
 end
