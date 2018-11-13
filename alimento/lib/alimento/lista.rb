@@ -64,4 +64,19 @@ class Lista
             @aux
         end
     end
+    
+    def to_s()
+        if @cola == nil
+            "Empty"
+        else
+            @aux = @cola
+            begin
+                puts @aux.valor + " "
+                @aux = @aux.siguiente
+            end while @aux != nil
+        end
+    end
+    
 end
+
+#la cabeza no tiene siguiente
