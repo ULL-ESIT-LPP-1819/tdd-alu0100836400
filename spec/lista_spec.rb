@@ -46,6 +46,25 @@ describe Lista do
         		expect(@lista.cabeza.valor).to eq(@nodo3.valor)
     		end
     		
+    		it "Existe un método para extraer por la cabeza" do
+    	    	expect(@lista).to respond_to :extraer_cabeza
     		end
+    		
+    		it "Se puede extraer un elemento de la lista" do
+        		@lista.extraer_cabeza()
+        		expect(@lista.cabeza.valor).to eq(@nodo2.valor)
+    		end
+		
+		    it "Existe un método para extraer por el final" do
+                expect(@lista).to respond_to :extraer_cola
+            end
+
+            it "Se puede extraer un elemento de lista" do
+                @lista.extraer_cola()
+                expect(@lista.cabeza).to eq(@nodo2)
+            end
+    	end
+    	
+    	
     end
 end
