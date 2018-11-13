@@ -65,6 +65,19 @@ describe Lista do
             end
     	end
     	
-    	
+    	context "Lista de etiquetas" do
+    	    it "Se puede insertar etiqueta en lista" do
+                @listaEtiquetas.insertar_cabeza(@etiqueta)
+                expect(@listaEtiquetas.cabeza.valor).to eq(@etiqueta)
+            end
+            
+            it "Se pueden insertar varias etiquetas en la lista" do
+                @listaEtiquetas.insertar_cabeza(@etiqueta2)
+                @listaEtiquetas.insertar_cabeza(@etiqueta3)
+                @listaEtiquetas.insertar_cabeza(@etiqueta4)
+                @listaEtiquetas.insertar_cabeza(@etiqueta5)
+                expect(@listaEtiquetas.cabeza.valor).to eq(@etiqueta5)
+            end
+    	end
     end
 end
