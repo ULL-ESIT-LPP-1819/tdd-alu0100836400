@@ -65,6 +65,14 @@ class Lista
         end
     end
     
+    def empty
+        if @cola == nil
+            return true
+        else
+            return false
+        end
+    end
+    
     def to_s()
         if @cola == nil
             "Empty"

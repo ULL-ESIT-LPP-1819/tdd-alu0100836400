@@ -16,10 +16,10 @@ describe Lista do
         @etiqueta5 = Etiqueta.new("Croissant", 30, 12, 47, 23, 7, 0.68)
         
 	end
-	describe "Lista" do
-	    context "LISTA DOBLEMENTE ENLAZADA" do	
-	        
-    		it "Existe la clase Lista" do
+	describe "LISTA DOBLEMENTE ENLAZADA" do
+	    
+	    context "Existen" do
+	        it "Existe la clase Lista" do
     		    expect(@lista.class).to eq(Lista)
     		end
     		
@@ -35,6 +35,24 @@ describe Lista do
     		    expect(@lista).to respond_to :insertar_cabeza
     		end
     		
+    		it "Existe un método para insertar por la cola" do
+    		    expect(@lista).to respond_to :insertar_cola
+    		end
+    		
+    		it "Existe un método para extraer por la cabeza" do
+    		    expect(@lista).to respond_to :extraer_cabeza
+    		end
+    		
+    		it "Existe un método para extraer por la cola" do
+    		    expect(@lista).to respond_to :extraer_cola
+    		end
+	    end
+	    
+	    context "Lista de enteros" do
+	        it "Lista inicialmente vacía" do
+	            expect(@lista.empty).to eq(true)
+	        end
+	        
 		    it "Se puede insertar un elemento en la lista" do
            	    @lista.insertar_cabeza(@nodo)
             	expect(@lista.cabeza).to eq(@nodo)
@@ -77,6 +95,10 @@ describe Lista do
                 @listaEtiquetas.insertar_cabeza(@etiqueta4)
                 @listaEtiquetas.insertar_cabeza(@etiqueta5)
                 expect(@listaEtiquetas.cabeza.valor).to eq(@etiqueta5)
+                expect(@listaEtiquetas.cabeza.anterior.valor).to eq(@etiqueta4)
+                expect(@listaEtiquetas.cabeza.anterior.anterior.valor).to eq(@etiqueta3)
+                expect(@listaEtiquetas.cabeza.anterior.anterior.anterior.valor).to eq(@etiqueta2)
+                expect(@listaEtiquetas.cola.valor).to eq(@etiqueta)
             end
     	end
     end
