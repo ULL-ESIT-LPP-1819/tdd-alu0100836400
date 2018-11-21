@@ -23,15 +23,15 @@ RSpec.describe Individuo do
     end
     
     describe "Paciente" do
-	    context "Existen" do
-	        it "Existe paciente" do
-	            expect(@paciente.class).to eq(Paciente)
-	            expect(@paciente).to have_attributes(:edad => 26, :sexo =>1, :peso =>74, :altura =>1.89)
-	            expect(@paciente).to be_an_instance_of(Paciente)
-	        end
-	    end
-	    
-	    context "Herencias" do
+        context "Existen" do
+            it "Existe paciente" do
+                expect(@paciente.class).to eq(Paciente)
+                expect(@paciente).to have_attributes(:edad => 26, :sexo =>1, :peso =>74, :altura =>1.89)
+                expect(@paciente).to be_an_instance_of(Paciente)
+            end
+        end
+        
+        context "Herencias" do
             it "Paciente es un BasicObject" do
                 expect(@paciente).to be_a_kind_of(BasicObject)
             end
@@ -45,9 +45,9 @@ RSpec.describe Individuo do
                 expect(@paciente).to be_a_kind_of(Paciente)
             end
         end
-	end
-	
-	describe "TratamientoObesidad" do
+    end
+    
+    describe "TratamientoObesidad" do
         context "Existen" do
             it "Existe TratamientoObesidad" do
                 expect(@tratamientoObesidad.class).to eq(TratamientoObesidad)
@@ -71,6 +71,31 @@ RSpec.describe Individuo do
             end
             it "TratamientoObesidad es un TratamientoObesidad" do
                 expect(@tratamientoObesidad).to be_a_kind_of(TratamientoObesidad)
+            end
+        end
+        
+        context "Métodos" do
+            it "IMC" do
+                expect(@tratamientoObesidad.calcularIMC).to eq(20.72)
+            end
+            
+            it "Grasa" do
+                expect(@tratamientoObesidad.calcularGrasa).to eq(14.64)
+            end
+        end
+        
+        context "Lista de pacientes en tratamiento de obesidad" do
+            it "Comparando pacientes por IMC" do
+                @listaPacientes.insertar_cabeza(@tratamientoObesidad)
+                @listaPacientes.insertar_cabeza(@tratamientoObesidad2)
+                @listaPacientes.insertar_cabeza(@tratamientoObesidad3)
+                @listaPacientes.insertar_cabeza(@tratamientoObesidad4)
+                @listaPacientes.insertar_cabeza(@tratamientoObesidad5)
+                
+                expect(@listaPacientes.cabeza.valor < @listaPacientes.cabeza.anterior.valor).to eq(true)
+                expect(@listaPacientes.cola.valor < @listaPacientes.cola.siguiente.valor).to eq(true)
+                expect(@listaPacientes.cabeza.valor < @listaPacientes.cabeza.anterior.anterior.valor).to eq(true)
+                expect(@listaPacientes.cola.siguiente.valor > @listaPacientes.cola.siguiente.siguiente.valor).to eq(true)
             end
         end
     end
