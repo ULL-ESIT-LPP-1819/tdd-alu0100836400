@@ -46,4 +46,32 @@ RSpec.describe Individuo do
             end
         end
 	end
+	
+	describe "TratamientoObesidad" do
+        context "Existen" do
+            it "Existe TratamientoObesidad" do
+                expect(@tratamientoObesidad.class).to eq(TratamientoObesidad)
+                expect(@tratamientoObesidad).to have_attributes(:edad => 26, :sexo =>1, :peso =>74, :altura =>1.89)
+                expect(@tratamientoObesidad).to be_an_instance_of(TratamientoObesidad)
+            end
+        end
+        
+        context "Herencias" do
+            it "TratamientoObesidad es un BasicObject" do
+                expect(@tratamientoObesidad).to be_a_kind_of(BasicObject)
+            end
+            it "TratamientoObesidad es un Object" do
+                expect(@tratamientoObesidad).to be_a_kind_of(Object)
+            end
+            it "TratamientoObesidad es un Individuo" do
+                expect(@tratamientoObesidad).to be_a_kind_of(Individuo)
+            end
+            it "TratamientoObesidad es un Paciente" do
+                expect(@tratamientoObesidad).to be_a_kind_of(Paciente)
+            end
+            it "TratamientoObesidad es un TratamientoObesidad" do
+                expect(@tratamientoObesidad).to be_a_kind_of(TratamientoObesidad)
+            end
+        end
+    end
 end
