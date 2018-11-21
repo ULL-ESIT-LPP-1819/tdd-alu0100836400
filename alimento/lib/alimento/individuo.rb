@@ -26,4 +26,28 @@ class TratamientoObesidad < Paciente
         @porcentajeGrasa = calcularGrasa()
     end
 
+    def calcularIMC()
+        ("%.2f" % (@peso / (1.0 * @altura ** 2))).to_f
+        
+    end
+    
+    def calcularGrasa()
+        ("%.2f" % (1.2 * @imc + 0.23 * @edad - 10.8 * @sexo - 5.4)).to_f
+        
+    end
+    
+    def valoracionIMC()
+        if @imc < 18.5
+            "Bajo peso"
+        else if @imc < 24.9
+            "Adecuado"
+            else
+            "Sobrepeso"
+            end
+        end
+    end
+    
+    def <=>(otro)
+        @imc <=> otro.imc
+    end
 end
