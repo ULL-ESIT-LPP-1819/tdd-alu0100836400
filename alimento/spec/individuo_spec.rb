@@ -30,5 +30,20 @@ RSpec.describe Individuo do
 	            expect(@paciente).to be_an_instance_of(Paciente)
 	        end
 	    end
+	    
+	    context "Herencias" do
+            it "Paciente es un BasicObject" do
+                expect(@paciente).to be_a_kind_of(BasicObject)
+            end
+            it "Paciente es un Object" do
+                expect(@paciente).to be_a_kind_of(Object)
+            end
+            it "Paciente es un Individuo" do
+                expect(@paciente).to be_a_kind_of(Individuo)
+            end
+            it "Paciente es un Paciente" do
+                expect(@paciente).to be_a_kind_of(Paciente)
+            end
+        end
 	end
 end
