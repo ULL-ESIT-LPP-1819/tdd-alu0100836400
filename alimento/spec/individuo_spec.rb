@@ -1,0 +1,24 @@
+require "./spec/spec_helper"
+
+
+RSpec.describe Individuo do
+	before :all do
+	    @individuo = Individuo.new(26, 1, 74, 1.89)
+	    @paciente = Paciente.new(26, 1, 74, 1.89)
+	    @tratamientoObesidad = TratamientoObesidad.new(26, 1, 74, 1.89)
+	    @tratamientoObesidad2 = TratamientoObesidad.new(26, 1, 100, 1.50)
+	    @tratamientoObesidad3 = TratamientoObesidad.new(26, 1, 83, 1.95)
+	    @tratamientoObesidad4 = TratamientoObesidad.new(26, 1, 61, 1.44)
+	    @tratamientoObesidad5 = TratamientoObesidad.new(26, 1, 93, 2.10)
+	    @listaPacientes = Lista.new()
+	end
+	describe "Individuo común" do
+	    context "Existen" do
+	        it "Existe la clase Lista" do
+    		    expect(@individuo.class).to eq(Individuo)
+    		    expect(@individuo).to have_attributes(:edad => 26, :sexo =>1, :peso =>74, :altura =>1.89)
+    		    expect(@individuo).to be_an_instance_of(Individuo)
+    		end
+        end
+    end
+end

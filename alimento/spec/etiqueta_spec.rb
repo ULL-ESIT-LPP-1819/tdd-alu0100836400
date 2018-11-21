@@ -1,4 +1,4 @@
-require "../spec/spec_helper"
+require "./spec/spec_helper"
 
 describe Etiqueta do
     before :each do

@@ -6,10 +6,10 @@ task :default => :spec
 
 desc "Pruebas etiqueta"
 task :spec do
-   sh "rspec -I. ../spec/etiqueta_spec.rb"
+   sh "rspec -I. spec/etiqueta_spec.rb"
 end
 
 desc "Pruebas lista"
 task :spec do
-   sh "rspec -I. ../spec/lista_spec.rb"
+   sh "rspec -I. spec/lista_spec.rb"
 end
