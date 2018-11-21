@@ -21,4 +21,14 @@ RSpec.describe Individuo do
     		end
         end
     end
+    
+    describe "Paciente" do
+	    context "Existen" do
+	        it "Existe paciente" do
+	            expect(@paciente.class).to eq(Paciente)
+	            expect(@paciente).to have_attributes(:edad => 26, :sexo =>1, :peso =>74, :altura =>1.89)
+	            expect(@paciente).to be_an_instance_of(Paciente)
+	        end
+	    end
+	end
 end
