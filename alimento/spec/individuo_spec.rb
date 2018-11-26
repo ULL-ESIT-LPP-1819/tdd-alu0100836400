@@ -4,6 +4,9 @@ require "./spec/spec_helper"
 RSpec.describe Individuo do
 	before :all do
 	    @individuo = Individuo.new(26, 1, 74, 1.89)
+	    @individuo2 = Individuo.new(15, 0, 80, 1.90)
+	    @individuo3 = Individuo.new(36, 0, 63, 1.88)
+	    @individuo4 = Individuo.new(40, 1, 79, 1.88)
 	    @paciente = Paciente.new(26, 1, 74, 1.89)
 	    @tratamientoObesidad = TratamientoObesidad.new(26, 1, 74, 1.89)
 	    @tratamientoObesidad2 = TratamientoObesidad.new(26, 1, 100, 1.50)
@@ -19,6 +22,22 @@ RSpec.describe Individuo do
     		    expect(@individuo).to have_attributes(:edad => 26, :sexo =>1, :peso =>74, :altura =>1.89)
     		    expect(@individuo).to be_an_instance_of(Individuo)
     		end
+        end
+        
+        describe "Probando Comparable"do
+            it "Mayor que" do
+                expect(@individuo2 > @individuo).to eq(true)
+                expect(@individuo > @individuo3).to eq(true)
+            end
+            
+            it "Menor que" do
+                expect(@individuo < @individuo2).to eq(true)
+                expect(@individuo < @individuo3).to eq(true)
+            end
+            
+            it "Igual" do
+                expect(@individuo3 == @individuo4).to eq(true)
+            end
         end
     end
     
