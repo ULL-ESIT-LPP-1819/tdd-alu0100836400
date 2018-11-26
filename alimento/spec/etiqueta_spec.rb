@@ -2,12 +2,15 @@ require "./spec/spec_helper"
 
 describe Etiqueta do
     before :each do
-        @etiqueta = Etiqueta.new("Leche", 5, 8, 32, 12, 7, 6)
+        @etiqueta = Etiqueta.new("Leche normal", 5, 8, 32, 12, 7, 6)
+        @etiqueta2 = Etiqueta.new("Leche con mucha sal", 5, 8, 32, 12, 7, 60)
+        @etiqueta3 = Etiqueta.new("Leche sin sal", 5, 8, 32, 12, 7, 0)
+        @etiqueta4 = Etiqueta.new("Leche 0% sal", 51, 81, 321, 121, 71, 0)
     end
     
     describe "Existe" do
         it "Nombre" do
-            expect(@etiqueta.nombre).to eq("Leche")
+            expect(@etiqueta.nombre).to eq("Leche normal")
         end
         
         it "Grasas" do
@@ -37,7 +40,7 @@ describe Etiqueta do
     
     describe "Existe método para obtener" do
         it "Nombre" do
-            expect(@etiqueta.getNombre).to eq("Leche")
+            expect(@etiqueta.getNombre).to eq("Leche normal")
         end
         
         it "Grasas" do
@@ -75,4 +78,21 @@ describe Etiqueta do
         end
     end
     
+    describe "Probando Comparable"do
+        it "Mayor que" do
+            expect(@etiqueta2 > @etiqueta).to eq(true)
+            expect(@etiqueta > @etiqueta3).to eq(true)
+            expect(@etiqueta2 > @etiqueta3).to eq(true)
+        end
+        
+        it "Menor que" do
+            expect(@etiqueta < @etiqueta2).to eq(true)
+            expect(@etiqueta3 < @etiqueta).to eq(true)
+            expect(@etiqueta3 < @etiqueta2).to eq(true)
+        end
+        
+        it "Igual" do
+            expect(@etiqueta3 == @etiqueta4).to eq(true)
+        end
+    end
 end
