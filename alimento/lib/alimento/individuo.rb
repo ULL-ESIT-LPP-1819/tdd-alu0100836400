@@ -1,4 +1,6 @@
 class Individuo
+    include Comparable
+    
     attr_reader :edad, :sexo, :peso, :altura
     
     def initialize(edad, sexo, peso, altura)
@@ -6,6 +8,10 @@ class Individuo
         @sexo = sexo
         @peso = peso
         @altura = altura
+    end
+    
+    def <=>(otro)
+        @altura <=> otro.altura
     end
 end
 

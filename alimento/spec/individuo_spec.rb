@@ -32,7 +32,7 @@ RSpec.describe Individuo do
             
             it "Menor que" do
                 expect(@individuo < @individuo2).to eq(true)
-                expect(@individuo < @individuo3).to eq(true)
+                expect(@individuo3 < @individuo).to eq(true)
             end
             
             it "Igual" do
