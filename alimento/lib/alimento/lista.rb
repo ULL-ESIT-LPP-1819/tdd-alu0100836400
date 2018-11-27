@@ -2,6 +2,8 @@ Nodo = Struct.new(:valor, :anterior, :siguiente)
 
 class Lista
     
+    include Enumerable
+    
     attr_reader :cabeza, :cola
     
     def initialize()
@@ -72,6 +74,19 @@ class Lista
             return false
         end
     end
+    
+    def [](index)
+        @aux = cola
+        for i in 1..index
+            if @aux.siguiente != nil
+                @aux = @aux.siguiente
+            else
+                i = index
+            end
+        end
+        @aux
+    end
+            
     
     def to_s()
         if @cola == nil

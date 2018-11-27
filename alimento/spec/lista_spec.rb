@@ -101,5 +101,15 @@ describe Lista do
                 expect(@listaEtiquetas.cola.valor).to eq(@etiqueta)
             end
     	end
+    	
+    	context "Probando Enumerable" do
+    	    it "Operador []" do
+    	        expect(@listaEtiquetas[0]).to eq(@listaEtiquetas.cola)
+    	        expect(@listaEtiquetas[1]).to eq(@listaEtiquetas.cola.siguiente)
+    	        expect(@listaEtiquetas[2]).to eq(@listaEtiquetas.cola.siguiente.siguiente)
+    	        expect(@listaEtiquetas[3]).to eq(@listaEtiquetas.cabeza.anterior)
+    	        expect(@listaEtiquetas[4]).to eq(@listaEtiquetas.cabeza)
+    	    end
+    	end
     end
 end
