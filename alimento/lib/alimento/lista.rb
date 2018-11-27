@@ -87,7 +87,6 @@ class Lista
         @aux
     end
             
-    
     def to_s()
         if @cola == nil
             "Empty"
