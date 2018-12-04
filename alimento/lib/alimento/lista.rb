@@ -74,6 +74,18 @@ class Lista
             return false
         end
     end
+    
+    def [](index)
+        @aux = cola
+        for i in 1..index
+            if @aux.siguiente != nil
+                @aux = @aux.siguiente
+            else
+                i = index
+            end
+        end
+        @aux
+    end
             
     def to_s()
         if @cola == nil
