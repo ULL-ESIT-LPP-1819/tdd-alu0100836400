@@ -86,6 +86,16 @@ class Lista
         end
         @aux
     end
+    
+    def each
+        if @cola != nil
+            @aux = @cola
+            while @aux != nil
+                yield @aux.valor
+                @aux = @aux.siguiente
+            end
+        end
+    end
             
     def to_s()
         if @cola == nil
