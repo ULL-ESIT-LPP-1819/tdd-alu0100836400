@@ -15,6 +15,14 @@ describe Lista do
         @etiqueta4 = Etiqueta.new("Turrón", 28, 12, 56, 45, 8.4, 0.7)
         @etiqueta5 = Etiqueta.new("Croissant", 30, 12, 47, 23, 7, 0.68)
         
+        @listaIndividuos = Lista.new()
+        @individuo = Individuo.new(26, 0, 75, 1.89)
+        @individuo2 = Individuo.new(26, 1, 80, 1.70)
+        @individuo3 = Individuo.new(24, 0, 90, 1.59)
+        @listaIndividuos.insertar_cabeza(@individuo)
+        @listaIndividuos.insertar_cabeza(@individuo2)
+        @listaIndividuos.insertar_cabeza(@individuo3)
+        
 	end
 	describe "LISTA DOBLEMENTE ENLAZADA" do
 	    

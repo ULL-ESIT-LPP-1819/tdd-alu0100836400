@@ -1,0 +1,21 @@
+Tue, 04 Dec 2018 21:54:13 +0000
+./alimento/lib/alimento/etiqueta.rb	Mon, 19 Nov 2018 11:19:42 +0000
+./alimento/lib/alimento/individuo.rb	Mon, 26 Nov 2018 22:38:59 +0000
+./alimento/lib/alimento/lista.rb	Tue, 04 Dec 2018 21:48:04 +0000
+./alimento/lib/alimento/main.rb	Tue, 13 Nov 2018 20:33:45 +0000
+./alimento/lib/alimento/version.rb	Tue, 06 Nov 2018 21:09:35 +0000
+./alimento/lib/alimento.rb	Tue, 06 Nov 2018 21:09:35 +0000
+./alimento/Gemfile.lock	Mon, 19 Nov 2018 11:17:01 +0000
+./alimento/LICENSE.txt	Tue, 06 Nov 2018 21:09:35 +0000
+./alimento/README.md	Tue, 20 Nov 2018 16:33:32 +0000
+./alimento/Rakefile	Tue, 20 Nov 2018 17:54:20 +0000
+./alimento/spec/lista_spec.rb	Tue, 04 Dec 2018 21:50:28 +0000
+./alimento/spec/spec_helper.rb	Tue, 20 Nov 2018 23:16:55 +0000
+./alimento/spec/etiqueta_spec.rb	Mon, 26 Nov 2018 22:04:43 +0000
+./alimento/spec/individuo_spec.rb	Mon, 26 Nov 2018 22:39:35 +0000
+./alimento/bin/console	Tue, 06 Nov 2018 21:09:35 +0000
+./alimento/bin/setup	Tue, 06 Nov 2018 21:09:35 +0000
+./alimento/alimento.gemspec	Mon, 19 Nov 2018 11:15:46 +0000
+./alimento/Guardfile	Mon, 19 Nov 2018 11:17:48 +0000
+./alimento/CODE_OF_CONDUCT.md	Tue, 06 Nov 2018 21:09:35 +0000
+./alimento/Gemfile	Tue, 06 Nov 2018 21:29:05 +0000
