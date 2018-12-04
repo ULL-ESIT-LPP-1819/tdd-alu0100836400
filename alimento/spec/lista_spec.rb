@@ -102,7 +102,7 @@ describe Lista do
             end
     	end
     	
-    	context "Probando Enumerable" do
+    	context "Enumerable - Etiquetas" do
     	    it "Operador []" do
     	        expect(@listaEtiquetas[0]).to eq(@listaEtiquetas.cola)
     	        expect(@listaEtiquetas[1]).to eq(@listaEtiquetas.cola.siguiente)
@@ -110,6 +110,7 @@ describe Lista do
     	        expect(@listaEtiquetas[3]).to eq(@listaEtiquetas.cabeza.anterior)
     	        expect(@listaEtiquetas[4]).to eq(@listaEtiquetas.cabeza)
     	    end
+    	    
     	end
     end
 end

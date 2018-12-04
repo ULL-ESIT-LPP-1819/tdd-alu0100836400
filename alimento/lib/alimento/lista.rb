@@ -74,18 +74,6 @@ class Lista
             return false
         end
     end
-    
-    def [](index)
-        @aux = cola
-        for i in 1..index
-            if @aux.siguiente != nil
-                @aux = @aux.siguiente
-            else
-                i = index
-            end
-        end
-        @aux
-    end
             
     def to_s()
         if @cola == nil
@@ -102,3 +90,12 @@ class Lista
 end
 
 #la cabeza no tiene siguiente
+
+    # def each(&block)
+    #     if block_given?
+    #         block.call(@cabeza)
+    #         @cola.each(&block) if @cola
+    #     else
+    #         to_enum(:each)
+    #     end
+    # end
