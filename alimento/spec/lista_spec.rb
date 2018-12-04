@@ -111,6 +111,25 @@ describe Lista do
     	        expect(@listaEtiquetas[4]).to eq(@listaEtiquetas.cabeza)
     	    end
     	    
+    	    it "Métodos max, min" do
+    	        expect(@listaEtiquetas.max).to eq(@etiqueta)
+    	        expect(@listaEtiquetas.min).to eq(@etiqueta2)
+    	    end
+    	   
+    	    it "Método sort" do
+                expect(@listaEtiquetas.sort).to eq([@etiqueta2, @etiqueta5, @etiqueta4, @etiqueta3, @etiqueta])
+    	    end
+    	    
+    	    it "Método select" do
+    	        expect(@listaEtiquetas.select{|i| i.proteinas == 8.4}).to eq([@etiqueta4])
+    	        expect(@listaEtiquetas.select{|i| i.nombre == "Bimbo"}).to eq([@etiqueta3])
+    	        expect(@listaEtiquetas.select{|i| i.hidratos == 21}).to eq([@etiqueta2])
+    	    end
+    	    
+    	    it "Método collect" do
+    	        expect(@listaEtiquetas.collect{|i| @etiqueta}).to eq([@etiqueta, @etiqueta, @etiqueta, @etiqueta, @etiqueta])
+    	    end
+    	    
     	end
     end
 end
