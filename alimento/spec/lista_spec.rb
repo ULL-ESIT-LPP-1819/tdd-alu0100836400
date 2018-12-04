@@ -129,7 +129,33 @@ describe Lista do
     	    it "Método collect" do
     	        expect(@listaEtiquetas.collect{|i| @etiqueta}).to eq([@etiqueta, @etiqueta, @etiqueta, @etiqueta, @etiqueta])
     	    end
+    	end
+    	
+    	context "Enumerable - Individuos" do
+    	    it "Operador []" do
+    	        expect(@listaIndividuos[0]).to eq(@listaIndividuos.cola)
+    	        expect(@listaIndividuos[1]).to eq(@listaIndividuos.cola.siguiente)
+    	        expect(@listaIndividuos[2]).to eq(@listaIndividuos.cabeza)
+    	    end
     	    
+    	    it "Métodos max, min" do
+    	        expect(@listaIndividuos.max).to eq(@individuo)
+    	        expect(@listaIndividuos.min).to eq(@individuo3)
+    	    end
+    	   
+    	    it "Método sort" do
+                expect(@listaIndividuos.sort).to eq([@individuo3, @individuo2, @individuo])
+    	    end
+    	    
+    	    it "Método select" do
+    	        expect(@listaIndividuos.select{|i| i.sexo == 0}).to eq([@individuo, @individuo3])
+    	        expect(@listaIndividuos.select{|i| i.altura > 1.60}).to eq([@individuo, @individuo2])
+    	        expect(@listaIndividuos.select{|i| i.peso == 75}).to eq([@individuo])
+    	    end
+    	    
+    	    it "Método collect" do
+    	        expect(@listaIndividuos.collect{|i| @individuo}).to eq([@individuo, @individuo, @individuo])
+    	    end
     	end
     end
 end
