@@ -8,12 +8,27 @@ RSpec.describe Individuo do
 	    @individuo3 = Individuo.new(36, 0, 63, 1.88)
 	    @individuo4 = Individuo.new(40, 1, 79, 1.88)
 	    @paciente = Paciente.new(26, 1, 74, 1.89)
-	    @tratamientoObesidad = TratamientoObesidad.new(26, 1, 74, 1.89)
-	    @tratamientoObesidad2 = TratamientoObesidad.new(26, 1, 100, 1.50)
-	    @tratamientoObesidad3 = TratamientoObesidad.new(26, 1, 83, 1.95)
-	    @tratamientoObesidad4 = TratamientoObesidad.new(26, 1, 61, 1.44)
-	    @tratamientoObesidad5 = TratamientoObesidad.new(26, 1, 93, 2.10)
+	    @tratamientoObesidad = TratamientoObesidad.new(26, 1, 74, 1.89, 0.0)
+	    @tratamientoObesidad2 = TratamientoObesidad.new(26, 1, 100, 1.50, 0.12) #0.0 0.12 0.27 0.54
+	    @tratamientoObesidad3 = TratamientoObesidad.new(26, 1, 83, 1.95, 0.27)
+	    @tratamientoObesidad4 = TratamientoObesidad.new(26, 1, 61, 1.44, 0.54)
+	    @tratamientoObesidad5 = TratamientoObesidad.new(26, 1, 93, 2.10, 0.54)
 	    @listaPacientes = Lista.new()
+	    
+	    @listaEtiquetas = Lista.new()
+        @etiqueta = Etiqueta.new("Yatekomo", 10, 4.7, 28, 3.7, 4.2, 1.2)
+        @etiqueta2 = Etiqueta.new("ColaCao", 3.6, 2.4, 21, 20, 7.8, 0.27)
+        @etiqueta3 = Etiqueta.new("Bimbo", 2.6, 0.7, 41, 3.3, 9.3, 0.91)
+        @etiqueta4 = Etiqueta.new("Turrón", 28, 12, 56, 45, 8.4, 0.7)
+        @etiqueta5 = Etiqueta.new("Croissant", 30, 12, 47, 23, 7, 0.68)
+        
+        @listaEtiquetas.insertar_cabeza(@etiqueta)
+        @listaEtiquetas.insertar_cabeza(@etiqueta2)
+        @listaEtiquetas.insertar_cabeza(@etiqueta3)
+        @listaEtiquetas.insertar_cabeza(@etiqueta4)
+        @listaEtiquetas.insertar_cabeza(@etiqueta5)
+        @menu = Menu.new(@listaEtiquetas)
+        @tratamientoObesidad.asignar_menu(@menu)
 	end
 	describe "Individuo común" do
 	    context "Existen" do
@@ -115,6 +130,12 @@ RSpec.describe Individuo do
                 expect(@listaPacientes.cola.valor < @listaPacientes.cola.siguiente.valor).to eq(true)
                 expect(@listaPacientes.cabeza.valor < @listaPacientes.cabeza.anterior.anterior.valor).to eq(true)
                 expect(@listaPacientes.cola.siguiente.valor > @listaPacientes.cola.siguiente.siguiente.valor).to eq(true)
+            end
+        end
+        
+        context "Valorar menú" do
+            it "Paciente 1" do
+                expect(@tratamientoObesidad.alimentacion_suficiente).to eq("Suficiente")
             end
         end
     end

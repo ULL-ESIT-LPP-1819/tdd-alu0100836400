@@ -94,5 +94,9 @@ describe Etiqueta do
         it "Igual" do
             expect(@etiqueta3 == @etiqueta4).to eq(true)
         end
+        
+        # it "Between" do
+        #     expect(@etiqueta.between?(etiqueta3, etiqueta2)).to eq(true)
+        # end
     end
 end

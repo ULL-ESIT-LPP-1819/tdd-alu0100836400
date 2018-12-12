@@ -24,12 +24,13 @@ end
 class TratamientoObesidad < Paciente
     include Comparable
     
-    attr_reader :imc, :porcentajeGrasa
+    attr_reader :imc, :porcentajeGrasa, :actividadFisica, :menu
     
-    def initialize(edad, sexo, peso, altura)
+    def initialize(edad, sexo, peso, altura, actividadFisica)
         super(edad, sexo, peso, altura)
         @imc = calcularIMC()
         @porcentajeGrasa = calcularGrasa()
+        @actividadFisica = actividadFisica
     end
 
     def calcularIMC()
@@ -52,6 +53,8 @@ class TratamientoObesidad < Paciente
             end
         end
     end
+    
+
     
     def <=>(otro)
         @imc <=> otro.imc
