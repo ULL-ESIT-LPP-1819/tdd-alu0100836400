@@ -54,7 +54,46 @@ class TratamientoObesidad < Paciente
         end
     end
     
-
+    ########nuevoooo
+    def peso_teorico_ideal
+        (@altura - 150) * 0.75 + 50
+    end
+    
+    def gasto_energetico_basal
+        @variable = 0
+        if @sexo == 1
+            @variable = 5
+        else
+            @variable = -161
+        end
+        (10 * @peso) + (6.25 * @altura) - (5 * @edad) + @variable
+    end
+    
+    def efecto_termogeno
+        gasto_energetico_basal * 0.10
+    end
+    
+    def gasto_actividad_fisica
+        gasto_energetico_basal * @actividadFisica
+    end
+    
+    def gasto_energetico_total
+        gasto_energetico_basal + efecto_termogeno + gasto_actividad_fisica
+    end
+    
+    def asignar_menu(menu)
+        @menu = menu
+    end
+    
+    def alimentacion_suficiente
+        if gasto_energetico_total * 1.1 < @menu.total
+            "Suficiente"
+        else
+            "No suficiente"
+        end
+    end
+            
+    #########
     
     def <=>(otro)
         @imc <=> otro.imc
