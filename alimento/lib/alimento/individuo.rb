@@ -54,7 +54,6 @@ class TratamientoObesidad < Paciente
         end
     end
     
-    ########nuevoooo
     def peso_teorico_ideal
         (@altura - 150) * 0.75 + 50
     end
@@ -92,8 +91,6 @@ class TratamientoObesidad < Paciente
             "No suficiente"
         end
     end
-            
-    #########
     
     def <=>(otro)
         @imc <=> otro.imc

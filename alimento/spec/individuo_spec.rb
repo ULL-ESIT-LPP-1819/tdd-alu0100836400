@@ -29,6 +29,10 @@ RSpec.describe Individuo do
         @listaEtiquetas.insertar_cabeza(@etiqueta5)
         @menu = Menu.new(@listaEtiquetas)
         @tratamientoObesidad.asignar_menu(@menu)
+        @tratamientoObesidad2.asignar_menu(@menu)
+        @tratamientoObesidad3.asignar_menu(@menu)
+        @tratamientoObesidad4.asignar_menu(@menu)
+        @tratamientoObesidad5.asignar_menu(@menu)
 	end
 	describe "Individuo común" do
 	    context "Existen" do
@@ -136,6 +140,25 @@ RSpec.describe Individuo do
         context "Valorar menú" do
             it "Paciente 1" do
                 expect(@tratamientoObesidad.alimentacion_suficiente).to eq("Suficiente")
+            end
+            
+            it "Paciente 2" do
+                expect(@tratamientoObesidad2.alimentacion_suficiente).to eq("Suficiente")
+            end
+            
+            it "Paciente 3" do
+                expect(@tratamientoObesidad3.alimentacion_suficiente).to eq("Suficiente")
+            end
+            
+            it "Paciente 4" do
+                expect(@tratamientoObesidad4.alimentacion_suficiente).to eq("Suficiente")
+            end
+            
+            it "Paciente 5" do
+                @tratamientoObesidad5.menu.listaComidas.extraer_cabeza
+                @tratamientoObesidad5.menu.listaComidas.extraer_cabeza
+                @tratamientoObesidad5.menu.cantidad_calorica
+                expect(@tratamientoObesidad5.alimentacion_suficiente).to eq("No suficiente")
             end
         end
     end
