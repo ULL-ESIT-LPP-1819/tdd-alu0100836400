@@ -4,11 +4,12 @@ class Lista
     
     include Enumerable
     
-    attr_reader :cabeza, :cola
+    attr_reader :cabeza, :cola, :size
     
     def initialize()
         @cabeza = nil
         @cola = nil
+        @size = 0
     end
     
     def insertar_cabeza(dato)
@@ -26,6 +27,7 @@ class Lista
             @cabeza.siguiente = @nuevo
         end
         @cabeza = @nuevo
+        @size += 1
     end
     
     def insertar_cola(dato)
@@ -43,6 +45,7 @@ class Lista
             @cola.anterior = @nuevo
         end
         @cola = @nuevo
+        @size += 1
     end
     
     def extraer_cabeza
@@ -54,6 +57,7 @@ class Lista
             @cabeza.siguiente = nil
             @aux
         end
+        @size -= 1
     end
     
     def extraer_cola
@@ -65,6 +69,7 @@ class Lista
             @cola.anterior = nil
             @aux
         end
+        @size -= 1
     end
     
     def empty

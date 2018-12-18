@@ -1,7 +1,6 @@
 require 'coveralls'
 Coveralls.wear!
 
-
 require "./lib/alimento/lista.rb"
 require "./lib/alimento/etiqueta.rb"
 require "./lib/alimento/individuo.rb"

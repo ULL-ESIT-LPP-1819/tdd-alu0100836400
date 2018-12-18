@@ -1,5 +1,7 @@
 class Menu
     
+    include Comparable
+    
     attr_reader :listaComidas, :total
     
     def initialize(listaComidas)
@@ -12,6 +14,10 @@ class Menu
         @listaComidas.each do|i|
             @total = @total + i.calcular_valor_energetico_cal
         end
+    end
+    
+    def <=>(otro)
+        @total <=> otro.total
     end
     
 end

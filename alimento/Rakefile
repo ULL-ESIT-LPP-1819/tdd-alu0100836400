@@ -13,3 +13,8 @@ desc "Pruebas lista"
 task :spec do
    sh "rspec -I. spec/lista_spec.rb"
 end
+
+desc "Pruebas individuo"
+task :spec do
+   sh "rspec -I. spec/individuo_spec.rb"
+end

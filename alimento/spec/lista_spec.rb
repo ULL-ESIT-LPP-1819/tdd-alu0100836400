@@ -89,6 +89,10 @@ describe Lista do
                 @lista.extraer_cola()
                 expect(@lista.cabeza).to eq(@nodo2)
             end
+            
+            it "Se puede conocer el tamaño" do
+                expect(@lista.size).to eq(1)
+            end
     	end
     	
     	context "Lista de etiquetas" do

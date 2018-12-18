@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem 'coveralls', require: false
+#gem 'coveralls', require: false #coveralls???
 gem 'rspec'
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
