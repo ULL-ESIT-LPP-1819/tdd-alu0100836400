@@ -101,6 +101,12 @@ class Lista
             end
         end
     end
+    
+    def clear
+        @cabeza = nil
+        @cola = nil
+        @size = 0
+    end
             
     def to_s()
         if @cola == nil
