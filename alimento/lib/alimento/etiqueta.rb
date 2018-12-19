@@ -49,4 +49,8 @@ class Etiqueta
         @sal <=> otro.sal
     end
     
+    def to_s()
+        @nombre
+    end
+    
 end

@@ -92,6 +92,10 @@ class TratamientoObesidad < Paciente
         end
     end
     
+    def to_s()
+        "(#{@edad}, #{@sexo}, #{@peso}, #{@altura}){#{gasto_energetico_total}}"
+    end
+    
     def <=>(otro)
         @imc <=> otro.imc
     end

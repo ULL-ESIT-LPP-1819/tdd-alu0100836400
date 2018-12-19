@@ -89,7 +89,7 @@ class Lista
                 i = index
             end
         end
-        @aux
+        @aux #.valor?
     end
     
     def each
@@ -112,11 +112,13 @@ class Lista
         if @cola == nil
             "Empty"
         else
+            @salida = "["
             @aux = @cola
             begin
-                puts @aux.valor + " "
+                @salida += "#{@aux.valor},"
                 @aux = @aux.siguiente
             end while @aux != nil
+            @salida += "]"
         end
     end
     
